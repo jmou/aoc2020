@@ -26,6 +26,7 @@ func main() {
 		}
 		numbers = append(numbers, n)
 	}
+	// should check scanner.Err()
 
 outer1:
 	for _, i := range numbers {

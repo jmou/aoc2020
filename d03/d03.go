@@ -9,6 +9,7 @@ import (
 func countTrees(grid []string, right int, down int) int {
 	col := 0
 	trees := 0
+	// Would have been easier to treat grid as a 2d array
 	for row, line := range grid {
 		if row%down != 0 {
 			continue
@@ -20,6 +21,7 @@ func countTrees(grid []string, right int, down int) int {
 			trees++
 		}
 		col += right
+		// or col %= len(line)
 		if col >= len(line) {
 			col -= len(line)
 		}

@@ -10,6 +10,7 @@ import (
 )
 
 func seatId(pass string) int {
+	// or map values
 	rowBin := strings.ReplaceAll(pass[:7], "B", "1")
 	rowBin = strings.ReplaceAll(rowBin, "F", "0")
 	row, _ := strconv.ParseInt(rowBin, 2, 8)

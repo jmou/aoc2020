@@ -24,6 +24,10 @@ func main() {
 	count_p1 := 0
 	count_p2 := 0
 	for _, credential := range credentials {
+		// go has no set
+		// assigning an array copies its values
+		// assigning a map only reassigns the reference
+		// there are many ways to initialize
 		fields := make(map[string]string)
 		for _, field := range strings.Fields(credential) {
 			fields[field[0:3]] = field[4:]
@@ -67,6 +71,8 @@ func main() {
 		if matched, _ := regexp.MatchString(`^#[0-9a-f]{6}$`, fields["hcl"]); !matched {
 			continue
 		}
+		// go does not have an easy way to find an element
+		// regexp would have been cleaner
 		if x := fields["ecl"]; x != "amb" && x != "blu" && x != "brn" &&
 			x != "gry" && x != "grn" && x != "hzl" && x != "oth" {
 			continue
