@@ -40,7 +40,7 @@ func main() {
 	}
 
 	seen := make(map[string]bool)
-	// copies slice
+	// I think this is sloppy because it mutates the same underlying array
 	frontier := containedBy["shiny gold bag"]
 	for len(frontier) > 0 {
 		inner := frontier[0]

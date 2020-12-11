@@ -25,7 +25,6 @@ func main() {
 	count_p2 := 0
 	for _, credential := range credentials {
 		// go has no set
-		// assigning an array copies its values
 		// assigning a map only reassigns the reference
 		// there are many ways to initialize
 		fields := make(map[string]string)
