@@ -8,11 +8,11 @@ import (
 
 func main() {
 	inputBytes, _ := ioutil.ReadFile("d06/input")
-	inputString := string(inputBytes)
+	inputString := strings.Trim(string(inputBytes), "\n")
 	// chomp newline (otherwise off-by-one in group count)
-	if inputString[len(inputString)-1] == '\n' {
-		inputString = inputString[:len(inputString)-1]
-	}
+	// if inputString[len(inputString)-1] == '\n' {
+	// 	inputString = inputString[:len(inputString)-1]
+	// }
 	groups := strings.Split(inputString, "\n\n")
 
 	p1 := 0
