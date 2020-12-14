@@ -36,6 +36,8 @@ func main() {
 		// positive remainder
 		target := ((-offset)%busId + busId) % busId
 		// chinese remainder theorem sieve
+		// I think this assumes bus IDs are coprime; a more proper
+		// solution apparently would use the LCM.
 		for rem%busId != target {
 			rem += div
 		}
