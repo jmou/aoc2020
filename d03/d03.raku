@@ -13,5 +13,5 @@ sub count-trees($dr, $dc) {
 say count-trees 1, 3;
 
 # reduction metaoperator [*]
-# TODO nicer way to splat tuples?
-say [*] [(1, 1), (1, 3), (1, 5), (1, 7), (2, 1)].map({ count-trees $_[0], $_[1] });
+# | slip operator in call makes parameters "slippy" (like splatting)
+say [*] [(1, 1), (1, 3), (1, 5), (1, 7), (2, 1)].map({ count-trees |$_ });
