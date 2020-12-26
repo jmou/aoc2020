@@ -57,5 +57,6 @@ say +@p1.grep: -> %fields {
 
 # grep() over passports
 # map() each to generate a lazy Seq, which validates each field
-# [&&] reduction hyperoperator to check all valid (should short circuit)
+# [] reduction metaoperator applies infix to a list
+# [&&] checks all valid and should short circuit
 say +@p1.grep: { [&&] .map(-> $kv { $kv.value ~~ %validators{$kv.key} }) };
