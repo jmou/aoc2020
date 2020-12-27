@@ -4,7 +4,7 @@ my @input = lines();
 # say +@input.grep({m:s/^(\d+)\-(\d+) (\w)\: (\w+)$/ and +$3.comb($2) ~~ ($0..$1)});
 
 # grep smartmatch filters
-# :s makes regex whitespace sensitive
+# :s makes regex whitespace sensitive (actually unquoted whitespace matches <.ws>)
 # Making this a sub doesn't seem to work; $0, etc capture group variables in
 # &filter are Nil.
 my &filter-input = -> &filter { @input.grep({m:s/^(\d+)\-(\d+) (\w)\: (\w+)$/ and &filter()}) };

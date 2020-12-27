@@ -42,6 +42,7 @@ my %validators is default(True) =
     # <[]> character class
     hcl => /^ '#' <[\da..f]> ** 6 $/,
     # any Junction autothreads over eigenstates; collapses in Boolean context
+    # <> word quoting returns list of strings (actually allomorphs)
     ecl => any(<amb blu brn gry grn hzl oth>),
     pid => /^ \d ** 9 $/;
 
@@ -52,6 +53,7 @@ say +@p1.grep: -> %fields {
     # first() gives short-circuiting behavior
     # $_ topic variable doesn't work on RHS of ~~ because it binds $_ to LHS
     # ! negates any relational operator
+    # {} postcircumfix subscripting
     !%fields.first: -> $kv { $kv.value !~~ %validators{$kv.key} };
 };
 
