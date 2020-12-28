@@ -7,7 +7,9 @@
 # }).sort;
 # trans substitutes characters, like tr
 # parse-base() more general than Int parse
-my @seat-ids = lines.map({.trans(<F L> => '0', <B R> => '1').parse-base(2)}).sort;
+# my @seat-ids = lines.map({.trans(<F L> => '0', <B R> => '1').parse-base(2)}).sort;
+# TR/// non-destructive transliteration
+my @seat-ids = lines.map({ :2(TR/FLBR/0011/) }).sort;
 # or since already sorted, @seat-ids[*-1]
 say @seat-ids.max;
 
