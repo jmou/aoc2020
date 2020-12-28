@@ -45,7 +45,7 @@ sub count-contains-gold(%bags) {
     # SetHash is mutable Set variant
     my SetHash $visited .= new;
     sub visit($type) {
-        # (cont) equivalent to ∋
+        # (cont) equivalent to ∋; could also use :exists adverb
         return if $visited (cont) $type;
         $visited.set($type);
         # .& invokes subroutine with invocant as first parameter

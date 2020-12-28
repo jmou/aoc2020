@@ -38,7 +38,7 @@ my %validators is default(True) =
     # ** general quantifier, like {2,6} repetition
     hgt => { m/^(\d**2..3)(cm|in)$/ && ($1 eq 'cm' ?? 150 <= $0 <= 193 !! 59 <= $0 <= 76) },
     # \# must be escaped (else is a comment)
-    # TODO escape seems to break with whitespace
+    # https://github.com/rakudo/rakudo/issues/4142 escaping bug
     # <[]> character class
     hcl => /^ '#' <[\da..f]> ** 6 $/,
     # any Junction autothreads over eigenstates; collapses in Boolean context

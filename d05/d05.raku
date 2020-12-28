@@ -1,6 +1,5 @@
-# my @seat-ids = lines.map(-> $line {
-#     # TODO making $_ mutable
-#     $_ = $line;
+# is copy parameter trait makes a writable copy
+# my @seat-ids = lines.map(-> $_ is copy {
 #     s:g/F|L/0/;
 #     s:g/B|R/1/;
 #     # radix form Int parse

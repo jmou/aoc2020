@@ -1,4 +1,4 @@
-# : can be used to call methods, and can switch order of method and invocant
+# : can be used to call methods; indirect invocant syntax reorders with method
 my @input = map lines: *.comb;
 
 sub count-trees($dr, $dc) {
